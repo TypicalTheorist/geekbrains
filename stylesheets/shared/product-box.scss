@@ -1,0 +1,202 @@
+@import "../mixins";
+
+// todo: смержить со стилями из index.scss
+.product-box {
+  padding-bottom: 96px;
+
+  &__content {
+    padding-top: 48px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: 48px;
+  }
+
+  &__sort-box {
+    padding-top: 48px;
+  }
+
+  .sort-box {
+    display: flex;
+
+    &__filter {
+      position: relative;
+      width: 360px;
+      padding: 16px;
+    }
+  }
+
+  .filter {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: calc(100% - 32px);
+    padding: 16px;
+    // todo: составить список уровней наложения из переменных
+    z-index: 1;
+
+    &__name {
+      @include f-family(normal, 600, 14px, 17px);
+      // todo: цвет в переменные
+      color: #000;
+      margin-bottom: 16px;
+    }
+
+    &__img {
+      margin-left: 12px;
+      fill: #000;
+    }
+
+    &[open] {
+      box-sizing: border-box;
+      background: #FFFFFF;
+      box-shadow: 6px 4px 35px rgba(0, 0, 0, 0.21);
+
+      .filter__name {
+        color: var(--color-select);
+      }
+
+      .filter__img {
+        fill: var(--color-select);
+      }
+    }
+
+    &__category {
+      border-left: 5px solid var(--color-select);
+      border-bottom: 1px solid #EBEBEB;
+      padding-left: 12px;
+      height: 36px;
+
+      @include f-family(normal, normal, 14px, 36px);
+      color: #6F6E6E;
+    }
+
+    details {
+      margin-bottom: 16px;
+      &[open] {
+        .filter__category {
+          color: #EF5B70;
+        }
+      }
+    }
+
+    &__ul {
+      list-style-type: none;
+      margin: 16px 34px;
+    }
+
+    &__link {
+      @include f-family(normal, normal, 14px, 17px);
+      color: #6F6E6E;
+
+      &:hover {
+        color: var(--color-select);
+      }
+    }
+  }
+
+  &__pagination {
+    margin: 0 auto;
+  }
+}
+
+.pagination {
+  border: 1px solid #EBEBEB;
+  padding: 16px;
+  width: 290px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  list-style-type: none;
+
+  &__item {
+    @include f-family(normal, 300, 16px, 19px);
+    color: #6F6E6E;
+    margin: 0 16px;
+    cursor: pointer;
+
+    &:hover {
+      color: var(--color-select);
+    }
+  }
+
+  &__img {
+    color: #000;
+  }
+
+  &__arrow {
+    width: 8px;
+    height: 14px;
+    cursor: pointer;
+
+    &:hover {
+      .pagination__img {
+        color: var(--color-select);
+      }
+    }
+  }
+}
+
+.product {
+  width: 360px;
+  // todo: цвет в переменные
+  background: #f8f8f8;
+  margin-bottom: 30px;
+  position: relative;
+
+  &:hover {
+    .product__img {
+      filter: brightness(50%);
+    }
+
+    .product__add {
+      display: flex;
+    }
+  }
+
+  &__img {
+    width: 100%;
+  }
+
+  &__content {
+    padding: 24px 16px 20px;
+  }
+
+  &__name {
+    @include f-family(normal, normal, 13px, 16px);
+    // todo: цвет в переменные
+    color: #000;
+    display: flex;
+    margin-bottom: 12px;
+  }
+
+  &__text {
+    @include f-family(normal, 300, 14px, 17px);
+    // todo: цвет в переменные
+    color: #5d5d5d;
+    margin-bottom: 18px;
+  }
+
+  &__price {
+    @include f-family(normal, normal, 16px, 19px);
+    color: var(--color-select);
+  }
+
+  &__add {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    width: 140px;
+    height: 45px;
+    border: 1px solid var(--color-white);
+    @include f-family(normal, normal, 14px, 17px);
+    position: absolute;
+    top: 190px;
+    left: 110px;
+    color: var(--color-white);
+
+    &:hover {
+      box-shadow: 0 0 5px var(--color-white);
+    }
+  }
+}

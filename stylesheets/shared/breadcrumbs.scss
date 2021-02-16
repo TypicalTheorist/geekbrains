@@ -1,0 +1,31 @@
+@import "../mixins";
+
+.breadcrumbs-box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  // todo: цвет в переменные
+  background: #F8F3F4;
+  height: 148px;
+
+  &__title {
+    @include f-family(normal, normal, 24px, 29px);
+    color: var(--color-select);
+  }
+
+  &__breadcrumbs {
+    @include f-family(normal, 300, 14px, 17px);
+    // todo: цвет в переменные
+    a {
+      color: #636363;
+
+      &:hover {
+        color: var(--color-select);
+      }
+
+      &.breadcrumbs-box__actual {
+        color: var(--color-select);
+      }
+    }
+  }
+}
