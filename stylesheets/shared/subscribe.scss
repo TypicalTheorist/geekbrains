@@ -1,17 +1,27 @@
 @import "../mixins";
+@import "../media";
 
 .subscribe {
   height: 450px;
   background: url(../../img/photosubscribe.jpg) bottom;
   background-size: cover;
   display: flex;
+  @include tablet-and-below {
+    flex-direction: column;
+    padding-top: 54px;
+    padding-bottom: 140px;
+  }
+
 
   &__left {
-    width: 50%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+
+    @include tablet-and-below {
+      margin-bottom: 48px;
+    }
   }
 
   &__img {
@@ -28,7 +38,6 @@
   }
 
   &__right {
-    width: 50%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -60,10 +69,13 @@
     border-top-left-radius: 24px;
     border-bottom-left-radius: 24px;
     height: 50px;
-    width: 256px;
     border: none;
     padding-left: 16px;
     box-sizing: border-box;
+
+    @include tablet-and-above {
+      min-width: 256px;
+    }
   }
 
   &__button {

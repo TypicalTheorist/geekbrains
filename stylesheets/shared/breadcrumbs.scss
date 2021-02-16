@@ -6,11 +6,25 @@
   align-items: center;
   // todo: цвет в переменные
   background: #F8F3F4;
-  height: 148px;
+  @include tablet-and-above {
+    height: 148px;
+  }
+
+  @include mobile-only {
+    flex-direction: column;
+    padding-top: 24px;
+    padding-bottom: 46px;
+  }
 
   &__title {
     @include f-family(normal, normal, 24px, 29px);
     color: var(--color-select);
+
+    @include mobile-only {
+      &:not(:last-child) {
+        margin-bottom: 32px;
+      }
+    }
   }
 
   &__breadcrumbs {

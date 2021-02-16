@@ -8,7 +8,7 @@
     padding-top: 48px;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: space-around;
     margin-bottom: 48px;
   }
 
@@ -103,7 +103,7 @@
 .pagination {
   border: 1px solid #EBEBEB;
   padding: 16px;
-  width: 290px;
+  max-width: 290px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -112,8 +112,13 @@
   &__item {
     @include f-family(normal, 300, 16px, 19px);
     color: #6F6E6E;
-    margin: 0 16px;
+    margin: 0 14px;
     cursor: pointer;
+
+    @include tablet-and-above {
+      margin-left: 16px;
+      margin-right: 16px;
+    }
 
     &:hover {
       color: var(--color-select);
