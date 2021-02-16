@@ -7,8 +7,20 @@
   margin-top: 64px;
   margin-bottom: 96px;
 
+  @include mobile-only {
+    flex-direction: column;
+  }
+
   &__loyalty {
-    margin-left: 128px;
+    @include tablet-and-above {
+      margin-left: 128px;
+    }
+  }
+
+  &__form {
+    @include mobile-only {
+      margin-bottom: 40px;
+    }
   }
 }
 

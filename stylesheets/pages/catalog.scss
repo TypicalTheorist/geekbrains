@@ -2,32 +2,4 @@
 @import "../shared/breadcrumbs";
 @import "../shared/subscribe";
 @import "../shared/product-box";
-
-.feature-box {
-  display: flex;
-  background: var(--color-text);
-  padding-top: 104px;
-  padding-bottom: 104px;
-}
-
-.feature {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-
-  &__icon {
-    margin-bottom: 20px;
-  }
-
-  &__header {
-    margin-bottom: 16px;
-    @include f-family(normal, normal, 20px, 24px);
-    color: var(--color-white);
-  }
-
-  &__text {
-    @include f-family(normal, 300, 14px, 17px);
-    text-align: center;
-    color: var(--color-white);
-  }
-}
+@import "../shared/fearture-box";

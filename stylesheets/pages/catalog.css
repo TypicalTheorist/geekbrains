@@ -37,13 +37,13 @@ details[open] > summary::before {
 .center {
   padding: 0 15px;
 }
-@media only screen and (min-width: 321px) {
+@media only screen and (min-width: 376px) {
   .center {
     padding-left: calc(50% - 368px);
     padding-right: calc(50% - 368px);
   }
 }
-@media only screen and (min-width: 1180px) {
+@media only screen and (min-width: 769px) {
   .center {
     padding-left: calc(50% - 570px);
     padding-right: calc(50% - 570px);
@@ -100,7 +100,18 @@ details[open] > summary::before {
   justify-content: space-between;
   align-items: center;
   background: #F8F3F4;
-  height: 148px;
+}
+@media only screen and (min-width: 376px) {
+  .breadcrumbs-box {
+    height: 148px;
+  }
+}
+@media only screen and (max-width: 375px) {
+  .breadcrumbs-box {
+    flex-direction: column;
+    padding-top: 24px;
+    padding-bottom: 46px;
+  }
 }
 .breadcrumbs-box__title {
   font-family: Lato;
@@ -109,6 +120,11 @@ details[open] > summary::before {
   font-size: 24px;
   line-height: 29px;
   color: var(--color-select);
+}
+@media only screen and (max-width: 375px) {
+  .breadcrumbs-box__title:not(:last-child) {
+    margin-bottom: 32px;
+  }
 }
 .breadcrumbs-box__breadcrumbs {
   font-family: Lato;
@@ -133,12 +149,23 @@ details[open] > summary::before {
   background-size: cover;
   display: flex;
 }
+@media only screen and (max-width: 768px) {
+  .subscribe {
+    flex-direction: column;
+    padding-top: 54px;
+    padding-bottom: 140px;
+  }
+}
 .subscribe__left {
-  width: 50%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+}
+@media only screen and (max-width: 768px) {
+  .subscribe__left {
+    margin-bottom: 48px;
+  }
 }
 .subscribe__img {
   width: 96px;
@@ -156,7 +183,6 @@ details[open] > summary::before {
   color: var(--color-text);
 }
 .subscribe__right {
-  width: 50%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -191,10 +217,14 @@ details[open] > summary::before {
   border-top-left-radius: 24px;
   border-bottom-left-radius: 24px;
   height: 50px;
-  width: 256px;
   border: none;
   padding-left: 16px;
   box-sizing: border-box;
+}
+@media only screen and (min-width: 376px) {
+  .subscribe__input {
+    min-width: 256px;
+  }
 }
 .subscribe__button {
   background: var(--color-select);
@@ -225,7 +255,7 @@ details[open] > summary::before {
   padding-top: 48px;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: space-around;
   margin-bottom: 48px;
 }
 .product-box__sort-box {
@@ -311,7 +341,7 @@ details[open] > summary::before {
 .pagination {
   border: 1px solid #EBEBEB;
   padding: 16px;
-  width: 290px;
+  max-width: 290px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -324,8 +354,14 @@ details[open] > summary::before {
   font-size: 16px;
   line-height: 19px;
   color: #6F6E6E;
-  margin: 0 16px;
+  margin: 0 14px;
   cursor: pointer;
+}
+@media only screen and (min-width: 376px) {
+  .pagination__item {
+    margin-left: 16px;
+    margin-right: 16px;
+  }
 }
 .pagination__item:hover {
   color: var(--color-select);
@@ -414,11 +450,23 @@ details[open] > summary::before {
   padding-top: 104px;
   padding-bottom: 104px;
 }
+@media only screen and (max-width: 768px) {
+  .feature-box {
+    flex-direction: column;
+    padding-top: 48px;
+    padding-bottom: 64px;
+  }
+}
 
 .feature {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+@media only screen and (max-width: 768px) {
+  .feature:not(:last-child) {
+    margin-bottom: 48px;
+  }
 }
 .feature__icon {
   margin-bottom: 20px;
